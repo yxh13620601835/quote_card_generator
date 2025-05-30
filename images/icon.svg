@@ -1,0 +1,21 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景卡片 -->
+  <rect x="16" y="16" width="96" height="96" rx="8" fill="#4A90E2" filter="url(#shadow)"/>
+  
+  <!-- 引号装饰 -->
+  <path d="M48 48C48 44.6863 50.6863 42 54 42H74C77.3137 42 80 44.6863 80 48V68C80 71.3137 77.3137 74 74 74H54C50.6863 74 48 71.3137 48 68V48Z" fill="white" fill-opacity="0.2"/>
+  <path d="M58 56L62 56M58 62L68 62M58 68L65 68" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- 阴影效果 -->
+  <defs>
+    <filter id="shadow" x="8" y="8" width="112" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="4"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+</svg>

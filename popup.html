@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>网页金句卡片生成器</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 文字输入区域 -->
+    <div class="input-section">
+      <textarea id="quoteText" placeholder="请输入或粘贴想要制作成卡片的文字..."></textarea>
+    </div>
+
+    <!-- 预览区域 -->
+    <div class="preview-section">
+      <canvas id="previewCanvas"></canvas>
+    </div>
+
+    <!-- 样式选择区域 -->
+    <div class="style-section">
+      <div class="style-group">
+        <label>背景颜色：</label>
+        <div class="color-options">
+          <button class="color-btn white active" data-color="#FFFFFF"></button>
+          <button class="color-btn beige" data-color="#F5F5DC"></button>
+          <button class="color-btn gray" data-color="#F0F0F0"></button>
+        </div>
+      </div>
+      <div class="style-group">
+        <label>字体选择：</label>
+        <div class="font-options">
+          <button class="font-btn heiti active" data-font="黑体">黑体</button>
+          <button class="font-btn kaiti" data-font="楷体">楷体</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导出按钮 -->
+    <div class="action-section">
+      <button id="exportBtn" class="export-btn">导出图片</button>
+    </div>
+  </div>
+  <script src="scripts/popup.js"></script>
+</body>
+</html>

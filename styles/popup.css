@@ -1,0 +1,161 @@
+/* 基础样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 400px;
+  min-height: 600px;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f8f9fa;
+  padding: 16px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+/* 文字输入区域 */
+.input-section {
+  width: 100%;
+}
+
+#quoteText {
+  width: 100%;
+  height: 120px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: none;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: border-color 0.3s;
+}
+
+#quoteText:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+/* 预览区域 */
+.preview-section {
+  width: 100%;
+  height: 300px;
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+}
+
+#previewCanvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 样式选择区域 */
+.style-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.style-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.style-group label {
+  font-size: 14px;
+  color: #333;
+  min-width: 70px;
+}
+
+/* 颜色选择按钮 */
+.color-options {
+  display: flex;
+  gap: 8px;
+}
+
+.color-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+}
+
+.color-btn.active {
+  border-color: #4a90e2;
+}
+
+.color-btn.white { background-color: #FFFFFF; }
+.color-btn.beige { background-color: #F5F5DC; }
+.color-btn.gray { background-color: #F0F0F0; }
+
+/* 字体选择按钮 */
+.font-options {
+  display: flex;
+  gap: 8px;
+}
+
+.font-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+
+.font-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.font-btn.active {
+  background-color: #4a90e2;
+  color: white;
+  border-color: #4a90e2;
+}
+
+/* 导出按钮 */
+.action-section {
+  margin-top: auto;
+}
+
+.export-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.export-btn:hover {
+  background-color: #357abd;
+}
+
+.export-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
