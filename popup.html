@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+
   <title>网页金句卡片生成器</title>
   <link rel="stylesheet" href="styles/popup.css">
 </head>
@@ -9,7 +10,10 @@
   <div class="container">
     <!-- 文字输入区域 -->
     <div class="input-section">
-      <textarea id="quoteText" placeholder="请输入或粘贴想要制作成卡片的文字..."></textarea>
+      <div class="input-group">
+        <textarea id="quoteText" placeholder="请输入或粘贴想要制作成卡片的文字..."></textarea>
+        <button id="summarizeBtn" class="summarize-btn">DeepSeek R1总结</button>
+      </div>
     </div>
 
     <!-- 预览区域 -->
@@ -20,18 +24,47 @@
     <!-- 样式选择区域 -->
     <div class="style-section">
       <div class="style-group">
+        <label>背景模板：</label>
+        <select id="templateSelect">
+          <option value="plain">纯色</option>
+          <option value="gradient">渐变</option>
+          <option value="pattern">纹理</option>
+        </select>
+      </div>
+      <div class="style-group">
         <label>背景颜色：</label>
         <div class="color-options">
           <button class="color-btn white active" data-color="#FFFFFF"></button>
-          <button class="color-btn beige" data-color="#F5F5DC"></button>
-          <button class="color-btn gray" data-color="#F0F0F0"></button>
+          <button class="color-btn beige" data-color="#F8F0E5"></button>
+          <button class="color-btn cream" data-color="#EADBC8"></button>
+          <button class="color-btn tan" data-color="#DAC0A3"></button>
+          <button class="color-btn pink" data-color="#FFE5E5"></button>
+          <button class="color-btn blue" data-color="#E8F3FF"></button>
         </div>
       </div>
       <div class="style-group">
-        <label>字体选择：</label>
-        <div class="font-options">
-          <button class="font-btn heiti active" data-font="黑体">黑体</button>
-          <button class="font-btn kaiti" data-font="楷体">楷体</button>
+          <label>字体样式：</label>
+          <div class="font-control">
+            <div class="font-options">
+              <button class="font-btn active" data-font="LXGW WenKai">霞鹜文楷</button>
+              <button class="font-btn" data-font="Ma Shan Zheng">马善政楷书</button>
+              <button class="font-btn" data-font="Noto Serif SC">思源宋体</button>
+              <button class="font-btn" data-font="Noto Sans SC">思源黑体</button>
+            </div>
+            <div class="font-size-control">
+              <label for="fontSizeInput">字号：</label>
+              <input type="number" id="fontSizeInput" min="12" max="72" value="24" />
+            </div>
+          </div>
+      </div>
+      <div class="style-group">
+        <label>标题：</label>
+        <input type="text" id="titleText" placeholder="请输入标题（可选）" class="title-input">
+      </div>
+      <div class="style-group">
+        <label>二维码：</label>
+        <div class="qrcode-options">
+          <input type="text" id="qrcodeText" placeholder="请输入二维码内容（可选）" class="qrcode-input">
         </div>
       </div>
     </div>
@@ -41,6 +74,7 @@
       <button id="exportBtn" class="export-btn">导出图片</button>
     </div>
   </div>
+  <script src="scripts/qrcode.js"></script>
   <script src="scripts/popup.js"></script>
 </body>
 </html>

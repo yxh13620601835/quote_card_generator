@@ -1,0 +1,16 @@
+# 环境变量配置文件
+.env
+
+# Node.js依赖
+node_modules/
+
+# 日志文件
+*.log
+
+# IDE配置
+.vscode/
+.idea/
+
+# 系统文件
+.DS_Store
+Thumbs.db
